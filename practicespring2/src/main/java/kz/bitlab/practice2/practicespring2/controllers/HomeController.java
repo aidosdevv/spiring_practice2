@@ -21,11 +21,16 @@ public class HomeController {
         return "showStudents";
     }
 
+    @GetMapping(value="/add-student")
+    public String pageAdd(){
+        return "add-student";
+    }
+
     @PostMapping(value="/addstudent")
     public String addStudent(@RequestParam(name = "student_name") String studentName,
                              @RequestParam(name = "student_surname") String studentSurname,
                              @RequestParam(name = "student_exam") int studentExam){
-
+        System.out.println(studentName + " " + studentSurname + " " + studentExam+">>>>>>>>>>>>>>>");
         Database.addStudent(studentName,studentSurname,studentExam);
 
         return "redirect:/add-student";

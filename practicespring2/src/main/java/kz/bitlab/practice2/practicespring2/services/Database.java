@@ -42,6 +42,8 @@ public class Database {
                                 .exam(studentExam)
                                 .mark(studentMark).
                                 build();
+        students.add(newStudent);
     }
+
 
 }
